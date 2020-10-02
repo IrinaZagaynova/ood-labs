@@ -2,11 +2,11 @@
 #include <map>
 #include "IObservable.h"
 
-template <class T>
-class CObservable : public IObservable<T>
+template <class T, class Event>
+class CObservable : public IObservable<T, Event>
 {
 public:
-	typedef IObserver<T> ObserverType;
+	typedef IObserver<T, Event> ObserverType;
 
 	void RegisterObserver(ObserverType& observer, size_t priority, const std::set<Event>& events) override
 	{

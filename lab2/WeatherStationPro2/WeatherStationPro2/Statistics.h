@@ -28,27 +28,24 @@ public:
 			break;
 		}
 	}
-	void Print(Event event)
+	std::string ToString(Event event)
 	{
 		switch (event)
 		{
 		case Event::Temperature:
-			std::cout << "Temp: " << m_temperatureValues.ToString();
-			break;
+			return "Temp: "+ m_temperatureValues.ToString();
 		case Event::Humidity:
-			std::cout << "Humidity: " << m_humidityValues.ToString();
-			break;
+			return "Humidity: " + m_humidityValues.ToString();
 		case Event::Pressure:
-			std::cout << "Pressure: " << m_pressureValues.ToString();
-			break;
+			return "Pressure: " + m_pressureValues.ToString();
 		case Event::WindSpeed:
-			std::cout << "Wind Speed: " << m_windSpeedValues.ToString();
-			break;
+			return "Wind Speed: " + m_windSpeedValues.ToString();
 		case Event::WindDirection:
-			std::cout << "Wind Direction: " << m_windDirectionValues.ToString();
-			break;
+			return "Wind Direction: " + m_windDirectionValues.ToString();
 		}
+		return "";
 	}
+
 private:
 	CStatsValues m_temperatureValues;
 	CStatsValues m_pressureValues;

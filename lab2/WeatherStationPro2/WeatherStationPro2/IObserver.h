@@ -2,7 +2,7 @@
 #include "IObservable.h"
 #include "Event.h"
 
-template <typename T>
+template <typename T, typename Event>
 class IObserver
 {
 public:

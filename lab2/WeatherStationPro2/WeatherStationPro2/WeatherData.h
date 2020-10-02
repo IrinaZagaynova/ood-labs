@@ -3,7 +3,7 @@
 #include "Observable.h"
 #include "WeatherInfo.h"
 
-class CWeatherData : public CObservable<SWeatherInfo>
+class CWeatherData : public CObservable<SWeatherInfo, Event>
 {
 public:
 

@@ -3,7 +3,7 @@
 #include "WeatherInfo.h"
 #include <iostream>
 
-class CDisplay : public IObserver<SWeatherInfo>
+class CDisplay : public IObserver<SWeatherInfo, Event>
 {
 private:
 	void Update(SWeatherInfo const& data, const Event& event) override
