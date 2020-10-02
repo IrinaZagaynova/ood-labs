@@ -11,7 +11,7 @@ private:
 	{
 		m_stats.Update(data);
 		std::cout << "Outside statistics" << std::endl;
-		m_stats.Print();
+		std::cout << m_stats.ToString();
 	}
 private:
 	CStatisticsPro m_stats;

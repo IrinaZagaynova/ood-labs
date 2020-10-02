@@ -21,7 +21,7 @@ public:
 	std::string ToString() const
 	{
 		return "max " + std::to_string(m_maxValue) + ", min " + std::to_string(m_minValue) +
-			", avetage " + std::to_string(m_accValue / m_accValue) + "\n";
+			", avetage " + ((m_countAcc != 0) ? std::to_string(m_accValue / m_accValue) : "?") + "\n";
 	}
 
 private:

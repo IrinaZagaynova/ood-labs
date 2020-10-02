@@ -11,7 +11,7 @@ private:
 	{
 		m_stats.Update(data);
 		std::cout << "Indoor Statistics" << std::endl;
-		m_stats.Print();
+		std::cout << m_stats.ToString();
 	}
 private:
 	CStatistics m_stats;

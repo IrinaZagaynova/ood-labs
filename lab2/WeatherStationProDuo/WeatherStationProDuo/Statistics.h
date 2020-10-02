@@ -12,13 +12,14 @@ public:
 		m_pressureValues.UpdateStats(data.pressure);
 		m_humidityValues.UpdateStats(data.humidity);
 	}
-	void Print()
+	std::string ToString()
 	{
-		std::cout << "Temp: " << m_temperatureValues.ToString();
-		std::cout << "Pressure: " << m_pressureValues.ToString();
-		std::cout << "Humidity: " << m_humidityValues.ToString();
-		std::cout << "----------------" << std::endl;
+		return "Temp: " + m_temperatureValues.ToString()
+			+ "Pressure: " + m_pressureValues.ToString()
+			+ "Humidity: " + m_humidityValues.ToString()
+			+ "----------------" + "\n";
 	}
+
 private:
 	CStatsValues m_temperatureValues;
 	CStatsValues m_pressureValues;

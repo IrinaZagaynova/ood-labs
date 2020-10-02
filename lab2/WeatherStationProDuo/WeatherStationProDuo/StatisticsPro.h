@@ -15,14 +15,14 @@ public:
 		m_windSpeedValues.UpdateStats(data.windSpeed);
 		m_windDirectionValues.UpdateStats(data.windDirection);
 	}
-	void Print()
+	std::string ToString()
 	{
-		std::cout << "Temp: " << m_temperatureValues.ToString();
-		std::cout << "Pressure: " << m_pressureValues.ToString();
-		std::cout << "Humidity: " << m_humidityValues.ToString();
-		std::cout << "Wind Speed: " << m_windSpeedValues.ToString();
-		std::cout << "Wind Direction: " << m_windDirectionValues.ToString();
-		std::cout << "----------------" << std::endl;
+		return "Temp: " + m_temperatureValues.ToString()
+			+ "Pressure: " + m_pressureValues.ToString()
+			+ "Humidity: " + m_humidityValues.ToString()
+			+ "Wind Speed: " + m_windSpeedValues.ToString()
+			+ "Wind Direction: " + m_windDirectionValues.ToString()
+			+ "----------------" + "\n";
 	}
 private:
 	CStatsValues m_temperatureValues;
