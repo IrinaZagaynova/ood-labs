@@ -9,7 +9,7 @@
 TEST_CASE("Can encrypt and decrypt stream reading bytes")
 {
 	std::vector<uint8_t> data;
-
+	
 	SECTION("Write data")
 	{
 		std::unique_ptr<IOutputDataStream> ostrm = std::make_unique<CEncryptOutputStream>(std::make_unique<CMemoryOutputStream>(data), 15);
@@ -21,8 +21,14 @@ TEST_CASE("Can encrypt and decrypt stream reading bytes")
 		ostrm->WriteByte('c');
 	}
 
+	CHECK(data[0] != 'a');
+	CHECK(data[1] != 'a');
+	CHECK(data[2] != 'a');
+	CHECK(data[3] != 'b');
+	CHECK(data[4] != 'c');
+	CHECK(data[5] != 'c');
+
 	std::unique_ptr<IInputDataStream> istrm = std::make_unique<CDecryptInputStream>(std::make_unique<ÑMemoryInputStream>(data), 15);
-	
 	CHECK(istrm->ReadByte() == 'a');
 	CHECK(istrm->ReadByte() == 'a');
 	CHECK(istrm->ReadByte() == 'a');
