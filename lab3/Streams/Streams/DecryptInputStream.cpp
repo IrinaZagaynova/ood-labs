@@ -9,7 +9,7 @@ CDecryptInputStream::CDecryptInputStream(std::unique_ptr<IInputDataStream>&& str
 {
     std::vector<uint8_t> enctyptTable(256);
     std::iota(enctyptTable.begin(), enctyptTable.end(), 0);
-    std::shuffle(enctyptTable.begin(), enctyptTable.end(), std::mt19937(key));
+    std::shuffle(enctyptTable.begin(), enctyptTable.end(), std::mt19937((unsigned int)key));
     for (size_t i = 0; i < 256; i++)
     {
         m_dectyptTable[enctyptTable[i]] = (uint8_t)i;

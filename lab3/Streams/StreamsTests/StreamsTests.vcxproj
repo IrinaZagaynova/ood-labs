@@ -149,10 +149,8 @@
     <ClCompile Include="..\Streams\EncryptOutputStream.cpp" />
     <ClCompile Include="..\Streams\FileInputStream.cpp" />
     <ClCompile Include="..\Streams\FileOutputStream.cpp" />
-    <ClCompile Include="..\Streams\InputStreamDecorator.cpp" />
     <ClCompile Include="..\Streams\MemoryInputStream.cpp" />
     <ClCompile Include="..\Streams\MemoryOutputStream.cpp" />
-    <ClCompile Include="..\Streams\OutputStreamDecorator.cpp" />
     <ClCompile Include="CompressAndDecompressStreamTests.cpp" />
     <ClCompile Include="EnctyptAndDecryptTests.cpp" />
     <ClCompile Include="FileInputStreamTests.cpp" />

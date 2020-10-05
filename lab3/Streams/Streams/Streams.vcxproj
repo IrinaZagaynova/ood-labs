@@ -145,11 +145,9 @@
     <ClCompile Include="EncryptOutputStream.cpp" />
     <ClCompile Include="FileInputStream.cpp" />
     <ClCompile Include="FileOutputStream.cpp" />
-    <ClCompile Include="InputStreamDecorator.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MemoryInputStream.cpp" />
     <ClCompile Include="MemoryOutputStream.cpp" />
-    <ClCompile Include="OutputStreamDecorator.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="CompressOutputStream.h" />

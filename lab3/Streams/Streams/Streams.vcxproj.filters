@@ -39,9 +39,6 @@
     <ClCompile Include="FileInputStream.cpp">
       <Filter>Исходные файлы\InputStream</Filter>
     </ClCompile>
-    <ClCompile Include="InputStreamDecorator.cpp">
-      <Filter>Исходные файлы\InputStream</Filter>
-    </ClCompile>
     <ClCompile Include="MemoryInputStream.cpp">
       <Filter>Исходные файлы\InputStream</Filter>
     </ClCompile>
@@ -55,9 +52,6 @@
       <Filter>Исходные файлы\OutputStream</Filter>
     </ClCompile>
     <ClCompile Include="MemoryOutputStream.cpp">
-      <Filter>Исходные файлы\OutputStream</Filter>
-    </ClCompile>
-    <ClCompile Include="OutputStreamDecorator.cpp">
       <Filter>Исходные файлы\OutputStream</Filter>
     </ClCompile>
   </ItemGroup>
