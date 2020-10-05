@@ -7,21 +7,21 @@
 
 int main()
 {
-	CWeatherData wd1;
-	CWeatherDataPro wd2;
+	CWeatherData weatherData;
+	CWeatherDataPro weatherDataPro;
 
-	CDisplay display1;
-	CDisplayPro display2;
-	wd1.RegisterObserver(display1, 1);
-	wd2.RegisterObserver(display2, 1);
+	CDisplay displayIndoor;
+	CDisplayPro displayOutside;
+	weatherData.RegisterObserver(displayIndoor, 1);
+	weatherDataPro.RegisterObserver(displayOutside, 1);
 
-	CStatsDisplay statsDisplay1;
-	CStatsDisplayPro statsDisplay2;
-	wd1.RegisterObserver(statsDisplay1, 2);
-	wd2.RegisterObserver(statsDisplay2, 2);
+	CStatsDisplay statsDisplayIndoor;
+	CStatsDisplayPro statsDisplayOutside;
+	weatherData.RegisterObserver(statsDisplayIndoor, 2);
+	weatherDataPro.RegisterObserver(statsDisplayOutside, 2);
 
-	wd1.SetMeasurements(3, 0.7, 760);
-	wd2.SetMeasurements(4, 0.8, 761, 2, 180);
+	weatherData.SetMeasurements(3, 0.7, 760);
+	weatherDataPro.SetMeasurements(4, 0.8, 761, 2, 180);
 
 	return 0;
 }
