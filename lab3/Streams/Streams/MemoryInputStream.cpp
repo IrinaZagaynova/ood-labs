@@ -23,16 +23,18 @@ uint8_t ÑMemoryInputStream::ReadByte()
 
 std::streamsize ÑMemoryInputStream::ReadBlock(void* dstBuffer, std::streamsize size)
 {
-    auto buffer = static_cast<uint8_t*>(dstBuffer);
-    std::streamsize bytesCouter = 0;
-    for (bytesCouter = 0; bytesCouter < size; bytesCouter++)
-    {
-        if (IsEOF())
-        {
-            break;
-        }
-        *buffer++ = ReadByte();   
-    }
+	auto buffer = static_cast<uint8_t*>(dstBuffer);
+	for (std::streamsize i = 0; i < size; i++)
+	{
+		try
+		{
+			*buffer++ = ReadByte();
+		}
+		catch (const std::ios_base::failure&)
+		{
+			return i;
+		}
+	}
 
-    return bytesCouter;
+	return size;
 }

@@ -31,15 +31,17 @@ uint8_t CFileInputStream::ReadByte()
 std::streamsize CFileInputStream::ReadBlock(void* dstBuffer, std::streamsize size)
 {
 	auto buffer = static_cast<uint8_t*>(dstBuffer);
-	std::streamsize bytesCouter = 0;
-	for (bytesCouter = 0; bytesCouter < size; bytesCouter++)
+	for (std::streamsize i = 0; i < size; i++)
 	{
-		if (IsEOF())
+		try
 		{
-			break;
+			*buffer++ = ReadByte();
 		}
-		*buffer++ = ReadByte();
+		catch (const std::ios_base::failure&)
+		{
+			return i;
+		}
 	}
 
-	return bytesCouter;
+	return size;
 }
