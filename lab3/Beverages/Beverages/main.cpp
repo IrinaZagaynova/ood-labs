@@ -139,7 +139,7 @@ void DialogWithUser()
 			beverage = make_unique<CTea>(CTea::Sort::Chamomile);
 			break;
 		default:
-			beverage = make_unique<CTea>();
+			return;
 		}
 	}
 	else

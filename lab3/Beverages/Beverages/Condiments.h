@@ -76,7 +76,6 @@ private:
 	unsigned m_quantity;
 };
 
-
 enum class IceCubeType
 {
 	Dry,	// Сухой лед (для суровых сибирских мужиков)
@@ -233,17 +232,16 @@ private:
 	unsigned m_quantity;
 };
 
+enum class LiquorType
+{
+	Nut,
+	Сhocolate
+};
+
 class СLiquor : public CCondimentDecorator
 {
 public:
-	enum class Type
-	{
-		Nut,
-		Сhocolate
-	};
-
-public:
-	СLiquor(IBeveragePtr&& beverage, Type type)
+	СLiquor(IBeveragePtr&& beverage, LiquorType type)
 		: CCondimentDecorator(move(beverage)), m_type(type)
 	{}
 
@@ -255,10 +253,10 @@ protected:
 
 	std::string GetCondimentDescription()const override
 	{
-		return std::string(m_type == Type::Nut ? "Nut" : "Сhocolate") + " liquor";
+		return std::string(m_type == LiquorType::Nut ? "Nut" : "Сhocolate") + " liquor";
 	}
 
 private:
-	Type m_type;
+	LiquorType m_type;
 };
 
