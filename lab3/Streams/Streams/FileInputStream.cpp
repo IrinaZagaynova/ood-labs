@@ -8,7 +8,6 @@ CFileInputStream::CFileInputStream(const std::string& fileName)
 	{
 		throw std::ios_base::failure(fileName + " not found");
 	}
-	m_stream.get(m_nextCh);
 }
 
 bool CFileInputStream::IsEOF() const
@@ -18,15 +17,15 @@ bool CFileInputStream::IsEOF() const
 
 uint8_t CFileInputStream::ReadByte()
 {	
+	char byte;
+	m_stream.get(byte);
+
 	if (IsEOF())
 	{
 		throw std::ios_base::failure("Error reading from file");
 	}
 
-	char ch = m_nextCh;
-	m_stream.get(m_nextCh);
-
-	return static_cast<uint8_t>(ch);
+	return (uint8_t)byte;
 }
 
 std::streamsize CFileInputStream::ReadBlock(void* dstBuffer, std::streamsize size)

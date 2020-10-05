@@ -23,5 +23,4 @@ public:
 
 private:
 	std::ifstream m_stream;
-	char m_nextCh;
 };
