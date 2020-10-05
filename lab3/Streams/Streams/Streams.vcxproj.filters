@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков\InputStream">
+      <UniqueIdentifier>{25272acd-75cd-4506-857d-57cf4eab4b49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\OutputStream">
+      <UniqueIdentifier>{bddb7c08-ed55-426a-aa7f-19e634dc181b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\InputStream">
+      <UniqueIdentifier>{64ff2c11-fbc0-4e1f-a895-8913d11e9595}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Исходные файлы\OutputStream">
+      <UniqueIdentifier>{1cc87c45-018d-4c9f-938b-7e2b5747ef15}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="DecompressInputStream.cpp">
+      <Filter>Исходные файлы\InputStream</Filter>
+    </ClCompile>
+    <ClCompile Include="DecryptInputStream.cpp">
+      <Filter>Исходные файлы\InputStream</Filter>
+    </ClCompile>
+    <ClCompile Include="FileInputStream.cpp">
+      <Filter>Исходные файлы\InputStream</Filter>
+    </ClCompile>
+    <ClCompile Include="InputStreamDecorator.cpp">
+      <Filter>Исходные файлы\InputStream</Filter>
+    </ClCompile>
+    <ClCompile Include="MemoryInputStream.cpp">
+      <Filter>Исходные файлы\InputStream</Filter>
+    </ClCompile>
+    <ClCompile Include="CompressOutputStream.cpp">
+      <Filter>Исходные файлы\OutputStream</Filter>
+    </ClCompile>
+    <ClCompile Include="EncryptOutputStream.cpp">
+      <Filter>Исходные файлы\OutputStream</Filter>
+    </ClCompile>
+    <ClCompile Include="FileOutputStream.cpp">
+      <Filter>Исходные файлы\OutputStream</Filter>
+    </ClCompile>
+    <ClCompile Include="MemoryOutputStream.cpp">
+      <Filter>Исходные файлы\OutputStream</Filter>
+    </ClCompile>
+    <ClCompile Include="OutputStreamDecorator.cpp">
+      <Filter>Исходные файлы\OutputStream</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FileInputStream.h">
+      <Filter>Файлы заголовков\InputStream</Filter>
+    </ClInclude>
+    <ClInclude Include="IInputDataStream.h">
+      <Filter>Файлы заголовков\InputStream</Filter>
+    </ClInclude>
+    <ClInclude Include="InputStreamDecorator.h">
+      <Filter>Файлы заголовков\InputStream</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryInputStream.h">
+      <Filter>Файлы заголовков\InputStream</Filter>
+    </ClInclude>
+    <ClInclude Include="CompressOutputStream.h">
+      <Filter>Файлы заголовков\OutputStream</Filter>
+    </ClInclude>
+    <ClInclude Include="FileOutputStream.h">
+      <Filter>Файлы заголовков\OutputStream</Filter>
+    </ClInclude>
+    <ClInclude Include="IOutputDataStream.h">
+      <Filter>Файлы заголовков\OutputStream</Filter>
+    </ClInclude>
+    <ClInclude Include="MemoryOutputStream.h">
+      <Filter>Файлы заголовков\OutputStream</Filter>
+    </ClInclude>
+    <ClInclude Include="OutputStreamDecorator.h">
+      <Filter>Файлы заголовков\OutputStream</Filter>
+    </ClInclude>
+    <ClInclude Include="DecompressInputStream.h">
+      <Filter>Файлы заголовков\InputStream</Filter>
+    </ClInclude>
+    <ClInclude Include="EncryptOutputStream.h">
+      <Filter>Файлы заголовков\OutputStream</Filter>
+    </ClInclude>
+    <ClInclude Include="DecryptInputStream.h">
+      <Filter>Файлы заголовков\InputStream</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="input.dat" />
+    <Text Include="output.dat" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="input.dat.restored" />
+  </ItemGroup>
+</Project>

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "IBeverage.h"
+#include <map>
 
 // Базовая реализация напитка, предоставляющая его описание
 class CBeverage : public IBeverage
@@ -32,16 +33,15 @@ public:
 	}
 };
 
+enum class Portion
+{
+	Standard,
+	Double
+};
+
 // Капуччино
 class CCappuccino : public CCoffee
 {
-public:
-	enum class Portion
-	{
-		Standard,
-		Double
-	};
-
 public:
 	CCappuccino(Portion portion = Portion::Standard)
 		:CCoffee((portion == Portion::Standard) ? "Cappuccino" : "Double Cappuccino"), m_portion(portion)
@@ -49,11 +49,7 @@ public:
 
 	double GetCost() const override
 	{
-		if (m_portion == Portion::Double)
-		{
-			return 120;
-		}
-		return 80;
+		return (m_portion == Portion::Double) ? 120 : 80;
 	}
 
 private:
@@ -63,12 +59,6 @@ private:
 // Латте
 class CLatte : public CCoffee
 {
-public:
-	enum class Portion
-	{
-		Standard,
-		Double
-	};
 
 public:
 	CLatte(Portion portion = Portion::Standard)
@@ -77,11 +67,7 @@ public:
 
 	double GetCost() const override
 	{
-		if (m_portion == Portion::Double)
-		{
-			return 130;
-		}
-		return 90;
+		return (m_portion == Portion::Double) ? 130 : 90;
 	}
 
 private:
@@ -92,14 +78,13 @@ private:
 class CTea : public CBeverage
 {
 public:
-	enum class Sort 
+	enum class Sort
 	{
 		Black,
 		Green,
 		Hibiscus,
 		Chamomile
 	};
-
 public:
 	CTea(Sort sort = Sort::Black)
 		:CBeverage(SortToString(sort) + " tea"), m_sort(sort)
@@ -111,20 +96,18 @@ public:
 	}
 
 private:
+	const std::map<Sort, std::string> SORTS_TYPES_AND_NAMES
+	{
+		{Sort::Black, "Black"},
+		{Sort::Green, "Green"},
+		{Sort::Hibiscus, "Hibiscus" },
+		{Sort::Chamomile, "Chamomile"}
+	};
+
 	std::string SortToString(Sort sort)
 	{
-		switch (sort)
-		{
-		case Sort::Black:
-			return "Black";
-		case Sort::Green:
-			return "Green";
-		case Sort::Hibiscus:
-			return "Hibiscus";
-		case Sort::Chamomile:
-			return "Chamomile";
-		}
-		return "";
+		auto iter = SORTS_TYPES_AND_NAMES.find(sort);
+		return (iter != SORTS_TYPES_AND_NAMES.end() ? iter->second : "");
 	}
 
 private:

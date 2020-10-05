@@ -73,7 +73,7 @@ protected:
 	}
 
 private:
-	unsigned m_quantity;
+	double m_quantity;
 };
 
 enum class IceCubeType
@@ -107,7 +107,7 @@ protected:
 	}
 
 private:
-	unsigned m_quantity;
+	double m_quantity;
 	IceCubeType m_type;
 };
 
@@ -164,7 +164,7 @@ protected:
 	}
 
 private:
-	unsigned m_mass;
+	double m_mass;
 };
 
 // Кокосовая стружка
@@ -187,7 +187,7 @@ protected:
 	}
 
 private:
-	unsigned m_mass;
+	double m_mass;
 };
 
 
@@ -229,7 +229,7 @@ protected:
 	}
 
 private:
-	unsigned m_quantity;
+	double m_quantity;
 };
 
 enum class LiquorType

@@ -183,7 +183,7 @@ int main()
 	cout << endl;
 	{
 		// Наливаем чашечку латте
-		auto latte = make_unique<CLatte>(CLatte::Portion::Double);
+		auto latte = make_unique<CLatte>(Portion::Double);
 		// добавляем корицы
 		auto cinnamon = make_unique<CCinnamon>(move(latte));
 		// добавляем пару долек лимона
