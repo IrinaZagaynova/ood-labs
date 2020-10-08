@@ -93,11 +93,4 @@
       <Filter>Файлы заголовков\InputStream</Filter>
     </ClInclude>
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="input.dat" />
-    <Text Include="output.dat" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="input.dat.restored" />
-  </ItemGroup>
 </Project>

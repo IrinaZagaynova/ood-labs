@@ -163,13 +163,6 @@
     <ClInclude Include="MemoryOutputStream.h" />
     <ClInclude Include="OutputStreamDecorator.h" />
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="input.dat" />
-    <Text Include="output.dat" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="input.dat.restored" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

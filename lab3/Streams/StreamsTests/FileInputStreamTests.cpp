@@ -3,13 +3,13 @@
 
 TEST_CASE("Can't read byte from empty file")
 {
-	CFileInputStream istrm("empty.txt");
+	CFileInputStream istrm("empty.bin");
 	CHECK_THROWS_AS(istrm.ReadByte(), std::ios_base::failure);
 }
 
 TEST_CASE("Can read byte from file")
 {
-	CFileInputStream istrm("input.txt");
+	CFileInputStream istrm("input.bin");
 	CHECK(istrm.ReadByte() == 'a');
 	CHECK(istrm.ReadByte() == 'b');
 	CHECK(istrm.ReadByte() == 'c');
@@ -18,7 +18,7 @@ TEST_CASE("Can read byte from file")
 
 TEST_CASE("Can read block from file")
 {
-	CFileInputStream istrm("input.txt");
+	CFileInputStream istrm("input.bin");
 	uint8_t buffer[4];
 
 	CHECK(istrm.ReadBlock(buffer, 4) == 4);
@@ -32,16 +32,16 @@ TEST_CASE("ReadBlock return the number of bytes actually read form file stream")
 {
 	uint8_t buffer[5];
 
-	CFileInputStream istrm1("empty.txt");
+	CFileInputStream istrm1("empty.bin");
 	CHECK(istrm1.ReadBlock(buffer, 5) == 0);
 
-	CFileInputStream istrm2("input.txt");
+	CFileInputStream istrm2("input.bin");
 	CHECK(istrm2.ReadBlock(buffer, 5) == 4);
 }
 
 TEST_CASE("IsEOF returns true if the last read operation from file stream failed")
 {
-	CFileInputStream istrm("input.txt");
+	CFileInputStream istrm("input.bin");
 	uint8_t buffer[4];
 	CHECK(istrm.ReadBlock(buffer, 4) == 4);
 	CHECK_THROWS_AS(istrm.ReadByte(), std::ios_base::failure);
