@@ -45,8 +45,13 @@ void ExecuteOptions(int argc, char* argv[])
 
 	while (!input->IsEOF())
 	{
-		uint8_t ch = input->ReadByte();
-		output->WriteByte(ch);
+		try
+		{
+			output->WriteByte(input->ReadByte());
+		}
+		catch (const std::exception&)
+		{
+		}
 	};
 }
 
