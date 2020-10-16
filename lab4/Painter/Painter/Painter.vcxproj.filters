@@ -1,0 +1,126 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Исходные файлы">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Файлы ресурсов">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Файлы заголовков\Shapes">
+      <UniqueIdentifier>{a330a024-8bf0-42a7-8fa7-e32c641242ae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Factory">
+      <UniqueIdentifier>{fd0a4954-68c3-43b2-a330-b28adaa81246}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Canvas">
+      <UniqueIdentifier>{224be0f9-27ad-498e-96e1-f1ed1509c63e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Painter">
+      <UniqueIdentifier>{2bce9c36-7438-4c3a-844e-98e18670ba69}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Файлы заголовков\Designer">
+      <UniqueIdentifier>{292a5600-7643-47cc-b09f-dd4b05272954}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Designer.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="PictureDraft.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="ShapeFactory.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Rectangle.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Painter.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Canvas.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Triangle.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Ellipse.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="RegularPolygon.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+    <ClCompile Include="Shape.cpp">
+      <Filter>Исходные файлы</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="targetver.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="PictureDraft.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Point.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
+    <ClInclude Include="Shape.h">
+      <Filter>Файлы заголовков\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Rectangle.h">
+      <Filter>Файлы заголовков\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="IShapeFactory.h">
+      <Filter>Файлы заголовков\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="ShapeFactory.h">
+      <Filter>Файлы заголовков\Factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Painter.h">
+      <Filter>Файлы заголовков\Painter</Filter>
+    </ClInclude>
+    <ClInclude Include="Designer.h">
+      <Filter>Файлы заголовков\Designer</Filter>
+    </ClInclude>
+    <ClInclude Include="Canvas.h">
+      <Filter>Файлы заголовков\Canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="Color.h">
+      <Filter>Файлы заголовков\Canvas</Filter>
+    </ClInclude>
+    <ClInclude Include="Triangle.h">
+      <Filter>Файлы заголовков\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="Ellipse.h">
+      <Filter>Файлы заголовков\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="RegularPolygon.h">
+      <Filter>Файлы заголовков\Shapes</Filter>
+    </ClInclude>
+    <ClInclude Include="ICanvas.h">
+      <Filter>Файлы заголовков\Canvas</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="test.txt" />
+  </ItemGroup>
+</Project>
