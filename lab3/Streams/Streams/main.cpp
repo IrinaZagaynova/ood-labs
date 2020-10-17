@@ -14,6 +14,20 @@ const std::string DECOMPRESS = "--decompress";
 const std::string ENCRYPT = "--encrypt";
 const std::string DECRYPT = "--decrypt";
 
+void CopyToFile(std::unique_ptr<IInputDataStream>& input, std::unique_ptr<IOutputDataStream>& output)
+{
+	while (!input->IsEOF())
+	{
+		try
+		{
+			output->WriteByte(input->ReadByte());
+		}
+		catch (const std::exception&)
+		{
+		}
+	};
+}
+
 void ExecuteOptions(int argc, char* argv[])
 {
 	std::unique_ptr<IInputDataStream> input = std::make_unique<CFileInputStream>(argv[argc - 2]);
@@ -43,16 +57,7 @@ void ExecuteOptions(int argc, char* argv[])
 		}
 	}
 
-	while (!input->IsEOF())
-	{
-		try
-		{
-			output->WriteByte(input->ReadByte());
-		}
-		catch (const std::exception&)
-		{
-		}
-	};
+	CopyToFile(input, output);
 }
 
 int main(int argc, char *argv[])
