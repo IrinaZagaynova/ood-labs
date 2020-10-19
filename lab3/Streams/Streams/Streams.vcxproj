@@ -154,6 +154,7 @@
     <ClInclude Include="DecompressInputStream.h" />
     <ClInclude Include="DecryptInputStream.h" />
     <ClInclude Include="EncryptOutputStream.h" />
+    <ClInclude Include="EncryptTable.h" />
     <ClInclude Include="FileInputStream.h" />
     <ClInclude Include="FileOutputStream.h" />
     <ClInclude Include="IInputDataStream.h" />

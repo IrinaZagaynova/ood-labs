@@ -92,5 +92,8 @@
     <ClInclude Include="DecryptInputStream.h">
       <Filter>Файлы заголовков\InputStream</Filter>
     </ClInclude>
+    <ClInclude Include="EncryptTable.h">
+      <Filter>Файлы заголовков</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

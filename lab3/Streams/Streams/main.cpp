@@ -22,13 +22,13 @@ void CopyToFile(std::unique_ptr<IInputDataStream>& input, std::unique_ptr<IOutpu
 		{
 			output->WriteByte(input->ReadByte());
 		}
-		catch (const std::exception&)
+		catch (const std::exception&) 
 		{
 		}
 	};
 }
 
-void ExecuteOptions(int argc, char* argv[])
+void OptionsHandler(int argc, char* argv[])
 {
 	std::unique_ptr<IInputDataStream> input = std::make_unique<CFileInputStream>(argv[argc - 2]);
 	std::unique_ptr<IOutputDataStream> output = std::make_unique<CFileOutputStream>(argv[argc - 1]);
@@ -71,7 +71,7 @@ int main(int argc, char *argv[])
 
 	try
 	{
-		ExecuteOptions(argc, argv);
+		OptionsHandler(argc, argv);
 	}
 	catch (const std::exception& e)
 	{
