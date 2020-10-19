@@ -30,7 +30,7 @@ void CCanvas::SetColor(Color color)
 void CCanvas::DrawLine(SPoint from, SPoint to)
 {
 	glLineWidth(3);
-    glColor3d(m_color.GetRGBColor()[0], m_color.GetRGBColor()[1], m_color.GetRGBColor()[2]);
+    glColor3d(m_color.red, m_color.green, m_color.blue);
 
 	glBegin(GL_LINES);
 	glVertex2d(from.x, from.y);
@@ -43,7 +43,7 @@ void CCanvas::DrawLine(SPoint from, SPoint to)
 void CCanvas::DrawEllipse(SPoint center, double horizontalRadius, double verticalRadius)
 {
     glLineWidth(3);
-    glColor3d(m_color.GetRGBColor()[0], m_color.GetRGBColor()[1], m_color.GetRGBColor()[2]);
+    glColor3d(m_color.red, m_color.green, m_color.blue);
 
     double xAngle = 1;
     double yAngle = 0;

@@ -13,13 +13,11 @@ const std::string REGULAR_POLYGON_NAME = "regularPolygon";
 
 Color GetColor(const std::string& color)
 {
-    auto iter = COLORS_NAMES.find(color);
-
-    if (iter != COLORS_NAMES.end())
+    auto iter = COLORS_AND_NAMES.find(color);
+    if (iter != COLORS_AND_NAMES.end())
     {
         return iter->second;
     }
-
 
     throw std::invalid_argument("Unknown color");
 }

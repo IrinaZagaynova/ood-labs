@@ -27,7 +27,7 @@ public:
 private:
 	std::string ColorToString(Color color)
 	{
-		for (auto iter = COLORS_NAMES.begin(); iter != COLORS_NAMES.end(); iter++)
+		for (auto iter = COLORS_AND_NAMES.begin(); iter != COLORS_AND_NAMES.end(); iter++)
 		{
 			if (iter->second == color)
 			{

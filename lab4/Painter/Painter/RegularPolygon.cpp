@@ -3,7 +3,7 @@
 #include <math.h>
 
 CRegularPolygon::CRegularPolygon(SPoint center, size_t vertexCount, double radius, Color color)
-	: m_center(center)
+    : m_center(center)
     , m_vertexCount(vertexCount)
     , m_radius(radius)
     , CShape(color)
@@ -25,13 +25,12 @@ void CRegularPolygon::Draw(ICanvas& canvas) const
 std::vector<SPoint> CRegularPolygon::GetVertices() const
 {
     std::vector<SPoint> vertices;
-    double angle = 2 * M_PI / m_vertexCount;
 
     for (size_t i = 0; i < m_vertexCount; i++)
     {
         vertices.push_back( 
-            { m_center.x + m_radius * cos(angle * double(i)),
-            m_center.y + m_radius * sin(angle * double(i)) }
+            { m_center.x + m_radius * cos(2 * M_PI / m_vertexCount * double(i)),
+            m_center.y + m_radius * sin(2 * M_PI / m_vertexCount * double(i)) }
         );
     }
 

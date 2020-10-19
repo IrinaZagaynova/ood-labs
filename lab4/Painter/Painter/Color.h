@@ -13,7 +13,7 @@ enum class Color
 	Black
 };
 
-const std::map<std::string, Color> COLORS_NAMES
+const std::map<std::string, Color> COLORS_AND_NAMES
 {
 	{"green", Color::Green},
 	{"red", Color::Red},
