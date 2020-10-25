@@ -29,20 +29,18 @@ void CCanvas::SetColor(Color color)
 
 void CCanvas::DrawLine(SPoint from, SPoint to)
 {
-	glLineWidth(3);
+	glLineWidth(2);
     glColor3d(m_color.red, m_color.green, m_color.blue);
 
 	glBegin(GL_LINES);
 	glVertex2d(from.x, from.y);
 	glVertex2d(to.x, to.y);
 	glEnd();
-
-    glEnable(GL_LINE_SMOOTH);
 }
 
 void CCanvas::DrawEllipse(SPoint center, double horizontalRadius, double verticalRadius)
 {
-    glLineWidth(3);
+    glLineWidth(2);
     glColor3d(m_color.red, m_color.green, m_color.blue);
 
     double xAngle = 1;
@@ -58,6 +56,4 @@ void CCanvas::DrawEllipse(SPoint center, double horizontalRadius, double vertica
         yAngle = sin(2 * M_PI / 360) * t + cos(2 * M_PI / 360) * yAngle;
     }
     glEnd();
-
-    glEnable(GL_LINE_SMOOTH);
 }

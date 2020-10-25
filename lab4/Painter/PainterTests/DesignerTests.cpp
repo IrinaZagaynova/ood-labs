@@ -42,7 +42,6 @@ BOOST_FIXTURE_TEST_SUITE(Designer, Designer_)
 BOOST_AUTO_TEST_SUITE(when_creating_draft)
 BOOST_AUTO_TEST_CASE(returns_empty_draft_when_input_is_empty)
 {
-	BOOST_CHECK_EQUAL(1, 1);
 	istringstream input;
 	auto draft = designer.CreateDraft(input);
 	BOOST_CHECK(draft.IsEmpty());

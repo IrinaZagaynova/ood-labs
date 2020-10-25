@@ -33,9 +33,7 @@ std::unique_ptr<CRectangle> CreateRectangle(std::istringstream& strm)
         throw std::invalid_argument("Invalid arguments to create rectangle");
     }
 
-    CRectangle rectangle(leftTopCorner, width, height, GetColor(color));
-
-    return std::make_unique<CRectangle>(rectangle);
+    return std::make_unique<CRectangle>(leftTopCorner, width, height, GetColor(color));
 }
 
 std::unique_ptr<CTriangle> CreateTriangle(std::istringstream& strm)
@@ -48,9 +46,7 @@ std::unique_ptr<CTriangle> CreateTriangle(std::istringstream& strm)
         throw std::invalid_argument("Invalid arguments to create triangle");
     }
 
-    CTriangle triangle(vertex1, vertex2, vertex3, GetColor(color));
-
-    return std::make_unique<CTriangle>(triangle);
+    return std::make_unique<CTriangle>(vertex1, vertex2, vertex3, GetColor(color));
 }
 
 std::unique_ptr<CEllipse> CreateEllipse(std::istringstream& strm)
@@ -64,9 +60,7 @@ std::unique_ptr<CEllipse> CreateEllipse(std::istringstream& strm)
         throw std::invalid_argument("Invalid arguments to create ellipse");
     }
 
-    CEllipse ellipse(center, horizontalRadius, verticalRadius, GetColor(color));
-
-    return std::make_unique<CEllipse>(ellipse);
+    return std::make_unique<CEllipse>(center, horizontalRadius, verticalRadius, GetColor(color));
 }
 
 std::unique_ptr<CRegularPolygon> CreateRegularPolygon(std::istringstream& strm)
@@ -86,9 +80,7 @@ std::unique_ptr<CRegularPolygon> CreateRegularPolygon(std::istringstream& strm)
         throw std::invalid_argument("Error. A regular polygon must have at least 3 vertices");
     }
 
-    CRegularPolygon regularPolygon(center, vertexCount, radius, GetColor(color));
-
-    return std::make_unique<CRegularPolygon>(regularPolygon);
+    return std::make_unique<CRegularPolygon>(center, vertexCount, radius, GetColor(color));
 }
 
 std::unique_ptr<CShape> CShapeFactory::CreateShape(const std::string& description)
