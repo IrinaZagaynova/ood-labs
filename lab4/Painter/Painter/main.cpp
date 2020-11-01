@@ -23,7 +23,7 @@ int main()
     if (!glfwInit())
         return -1;
 
-    window = glfwCreateWindow(600, 400, "", NULL, NULL);
+    window = glfwCreateWindow(900, 600, "", NULL, NULL);
 
     if (!window)
     {

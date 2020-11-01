@@ -14,6 +14,12 @@ const std::string DECOMPRESS = "--decompress";
 const std::string ENCRYPT = "--encrypt";
 const std::string DECRYPT = "--decrypt";
 
+struct OptionArg
+{
+	std::string name;
+	int key;
+};
+
 void CopyToFile(std::unique_ptr<IInputDataStream>& input, std::unique_ptr<IOutputDataStream>& output)
 {
 	while (!input->IsEOF())
@@ -28,34 +34,73 @@ void CopyToFile(std::unique_ptr<IInputDataStream>& input, std::unique_ptr<IOutpu
 	};
 }
 
+std::unique_ptr<IInputDataStream> DecorateInputStream(std::unique_ptr<IInputDataStream>&& input, std::vector<OptionArg> const& inputStreamOptions)
+{
+	for (auto it = inputStreamOptions.rbegin(); it != inputStreamOptions.rend(); it++)
+	{
+		if (it->name == DECRYPT)
+		{
+			input = std::make_unique<CDecryptInputStream>(move(input), it->key);
+		}
+		else if (it->name == DECOMPRESS)
+		{
+			input = std::make_unique<CDecompressInputStream>(move(input));
+		}
+	}
+	return move(input);
+}
+
+std::unique_ptr<IOutputDataStream> DecorateOutputStream(std::unique_ptr<IOutputDataStream>&& output, std::vector<OptionArg> const& outputStreamOptions)
+{
+	for (size_t i = 0; i < outputStreamOptions.size(); i++)
+	{
+		if (outputStreamOptions[i].name == ENCRYPT)
+		{
+			output = std::make_unique<CEncryptOutputStream>(move(output), outputStreamOptions[i].key);
+		}
+		else if (outputStreamOptions[i].name == COMPRESS)
+		{
+			output = std::make_unique<CCompressOutputStream>(move(output));
+		}
+	}
+	return move(output);
+}
+
 void OptionsHandler(int argc, char* argv[])
 {
 	std::unique_ptr<IInputDataStream> input = std::make_unique<CFileInputStream>(argv[argc - 2]);
 	std::unique_ptr<IOutputDataStream> output = std::make_unique<CFileOutputStream>(argv[argc - 1]);
 
+	std::vector<OptionArg> inputStreamOptions;
+	std::vector<OptionArg> outputStreamOptions;
+
 	for (int i = 1; i < argc - 2; i++)
 	{
 		if (argv[i] == COMPRESS)
 		{
-			output = std::make_unique<CCompressOutputStream>(move(output));
+			outputStreamOptions.push_back({argv[i], 0});
 		}
 		else if (argv[i] == DECOMPRESS)
 		{
-			input = std::make_unique<CDecompressInputStream>(move(input));
+			inputStreamOptions.push_back({ argv[i], 0 });
 		}
 		else if (argv[i] == ENCRYPT)
 		{
-			output = std::make_unique<CEncryptOutputStream>(move(output), std::stoi(argv[++i]));
+			outputStreamOptions.push_back({ argv[i], std::stoi(argv[++i]) });
+
 		}
 		else if (argv[i] == DECRYPT)
 		{
-			input = std::make_unique<CDecryptInputStream>(move(input), std::stoi(argv[++i]));
+			inputStreamOptions.push_back({ argv[i], std::stoi(argv[++i]) });	
 		}
 		else
 		{
-			throw std::invalid_argument(std::string(argv[i]) + " - invalid option");
+			throw std::invalid_argument(std::string(argv[i]) + " - invalid option\n");
 		}
 	}
+
+	input = DecorateInputStream(move(input), inputStreamOptions);
+	output = DecorateOutputStream(move(output), outputStreamOptions);
 
 	CopyToFile(input, output);
 }
