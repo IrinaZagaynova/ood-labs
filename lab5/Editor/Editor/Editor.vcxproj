@@ -152,9 +152,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractCommand.h" />
+    <ClInclude Include="ChangeStringCommand.h" />
+    <ClInclude Include="DeleteItemCommand.h" />
     <ClInclude Include="Document.h" />
     <ClInclude Include="DocumentItem.h" />
-    <ClInclude Include="Commands.h" />
     <ClInclude Include="ConstDocumentItem.h" />
     <ClInclude Include="Editor.h" />
     <ClInclude Include="History.h" />
@@ -164,9 +165,11 @@
     <ClInclude Include="IDocument.h" />
     <ClInclude Include="IImage.h" />
     <ClInclude Include="Image.h" />
+    <ClInclude Include="InsertItemCommand.h" />
     <ClInclude Include="IParagraph.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Paragraph.h" />
+    <ClInclude Include="ResizeImageCommand.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

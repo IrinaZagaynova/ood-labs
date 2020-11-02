@@ -1,6 +1,6 @@
 #pragma once
 #include "IImage.h"
-#include "Commands.h"
+#include "ResizeImageCommand.h"
 
 const int MAX_IMAGE_SIZE = 1000;
 const int MIN_IMAGE_SIZE = 1;

@@ -1,7 +1,8 @@
 #include "Document.h"
 #include "Paragraph.h"
 #include "Image.h"
-#include "Commands.h"
+#include "InsertItemCommand.h"
+#include "DeleteItemCommand.h"
 #include <fstream>
 
 std::shared_ptr<IParagraph> CDocument::InsertParagraph(const std::string& text, optional<size_t> position)

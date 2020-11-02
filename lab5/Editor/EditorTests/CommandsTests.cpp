@@ -1,5 +1,11 @@
 #include "stdafx.h"
-#include "../Editor/Commands.h"
+#include "../Editor/Paragraph.h"
+#include "../Editor/History.h"
+#include "../Editor/CommandSink.h"
+#include "../Editor/InsertItemCommand.h"
+#include "../Editor/DeleteItemCommand.h"
+#include "../Editor/ChangeStringCommand.h"
+#include "../Editor/ResizeImageCommand.h"
 #include "../Editor/Paragraph.h"
 
 BOOST_AUTO_TEST_CASE(InsertItemCommand_test)

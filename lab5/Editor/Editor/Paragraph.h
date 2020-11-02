@@ -1,9 +1,7 @@
 #pragma once
 #include "IParagraph.h"
-#include "History.h"
-#include "Document.h"
-#include "Commands.h"
 #include "ICommandSink.h"
+#include "ChangeStringCommand.h"
 
 class CParagraph : public IParagraph
 {

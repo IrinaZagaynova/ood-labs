@@ -1,6 +1,6 @@
 #pragma once
 #include "ICommand.h"
-#include <deque>
+#include <vector>
 #include <memory>
 
 typedef std::unique_ptr<ICommand> ICommandPtr;
@@ -17,6 +17,6 @@ public:
 	void Redo();
 	void AddAndExecuteCommand(ICommandPtr&& command);
 private:
-	std::deque<ICommandPtr> m_commands;
+	std::vector<ICommandPtr> m_commands;
 	size_t m_nextCommandIndex = 0;
 };
