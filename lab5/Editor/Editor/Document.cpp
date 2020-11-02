@@ -101,6 +101,10 @@ void CDocument::Save(const Path& path) const
         {
             auto imagePtr = item.GetImage();
             Path imageHtmlPath = imagesDirectory / imagePtr->GetPath().filename();
+            if (std::filesystem::exists(imageHtmlPath))
+            {
+                std::filesystem::remove(imageHtmlPath);
+            }
             std::filesystem::copy_file(item.GetImage()->GetPath(), imageHtmlPath);
             output << "<img src=\"./images/" << imagePtr->GetPath().filename().string()
                 << "\"width=\"" << imagePtr->GetWidth()

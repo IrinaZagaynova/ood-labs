@@ -32,7 +32,21 @@ public:
 
 	~CImage()
 	{
-		std::filesystem::remove(m_path);
+		try
+		{
+			size_t count = 0;
+			while (count < 3)
+			{
+				if (std::filesystem::remove(m_path))
+				{
+					break;
+				}
+				count++;
+			}
+		}
+		catch (const std::exception&)
+		{
+		}
 	}
 
 	Path GetPath() const override

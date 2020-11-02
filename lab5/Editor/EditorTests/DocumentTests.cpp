@@ -18,7 +18,9 @@ BOOST_FIXTURE_TEST_SUITE(EmptyDocument, EmptyDocumentFixture)
 	BOOST_AUTO_TEST_SUITE(InsertParagraph_test)
 		BOOST_AUTO_TEST_CASE(can_insert_paragraph)
 		{
-			BOOST_CHECK_EQUAL(document.InsertParagraph("firts").get(), document.GetItem(0).GetParagraph().get());
+			auto item = document.InsertParagraph("firts").get();
+			auto expected = document.GetItem(0).GetParagraph().get();
+			BOOST_CHECK_EQUAL(item, expected);
 			BOOST_CHECK_EQUAL(document.GetItem(0).GetParagraph()->GetText(), "firts");
 			BOOST_CHECK_EQUAL(document.GetItemsCount(), 1);
 		}
@@ -31,7 +33,9 @@ BOOST_FIXTURE_TEST_SUITE(EmptyDocument, EmptyDocumentFixture)
 	BOOST_AUTO_TEST_SUITE(InsertImage_test)
 		BOOST_AUTO_TEST_CASE(can_insert_image)
 		{
-			BOOST_CHECK_EQUAL(document.InsertImage("test-image.jpg", 500, 300).get(), document.GetItem(0).GetImage().get());
+			auto item = document.InsertImage("test-image.jpg", 500, 300).get();
+			auto expected = document.GetItem(0).GetImage().get();
+			BOOST_CHECK_EQUAL(item, expected);
 			BOOST_CHECK_EQUAL(document.GetItem(0).GetImage()->GetPath().remove_filename(), std::filesystem::temp_directory_path());
 			BOOST_CHECK_EQUAL(document.GetItem(0).GetImage()->GetWidth(), 500);
 			BOOST_CHECK_EQUAL(document.GetItem(0).GetImage()->GetHeight(), 300);

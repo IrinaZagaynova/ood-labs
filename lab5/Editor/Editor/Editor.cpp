@@ -10,12 +10,12 @@ CEditor::CEditor(std::istream& istrm, std::ostream& ostrm)
 	m_menu.AddItem("exit", "Exit", [this](istream&) { m_menu.Exit(); });
 	AddMenuItem("setTitle", "Changes title. Args: <new title>", &CEditor::SetTitle);
 	AddMenuItem("list", "Show document", &CEditor::List);
-	AddMenuItem("insertParagraph", "Insert Paragraph", &CEditor::InsertParagraph);
-	AddMenuItem("insertImage", "Insert Image", &CEditor::InsertImage);
-	AddMenuItem("replaceText", "Replace Text", &CEditor::ReplaceText);
-	AddMenuItem("resizeImage", "Resize Image", &CEditor::ResizeImage);
-	AddMenuItem("deleteItem", "Delete Item", &CEditor::DeleteItem);
-	AddMenuItem("save", "Save", &CEditor::Save);
+	AddMenuItem("insertParagraph", "Insert Paragraph. Args: <position, text>", &CEditor::InsertParagraph);
+	AddMenuItem("insertImage", "Insert Image. Args: <position, width, height, path>", &CEditor::InsertImage);
+	AddMenuItem("replaceText", "Replace Text. Args: <position, new text>", &CEditor::ReplaceText);
+	AddMenuItem("resizeImage", "Resize Image. Args: <position, width, height>", &CEditor::ResizeImage);
+	AddMenuItem("deleteItem", "Delete Item. Args: <position>", &CEditor::DeleteItem);
+	AddMenuItem("save", "Save. Args: <path>", &CEditor::Save);
 	AddMenuItem("undo", "Undo command", &CEditor::Undo);
 	AddMenuItem("redo", "Redo undone command", &CEditor::Redo);
 }

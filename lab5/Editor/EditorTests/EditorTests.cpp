@@ -6,12 +6,12 @@ const std::string INSTRUCTION = R"(Commands list:
   exit: Exit
   setTitle: Changes title. Args: <new title>
   list: Show document
-  insertParagraph: Insert Paragraph
-  insertImage: Insert Image
-  replaceText: Replace Text
-  resizeImage: Resize Image
-  deleteItem: Delete Item
-  save: Save
+  insertParagraph: Insert Paragraph. Args: <position, text>
+  insertImage: Insert Image. Args: <position, width, height, path>
+  replaceText: Replace Text. Args: <position, new text>
+  resizeImage: Resize Image. Args: <position, width, height>
+  deleteItem: Delete Item. Args: <position>
+  save: Save. Args: <path>
   undo: Undo command
   redo: Redo undone command
 )";
