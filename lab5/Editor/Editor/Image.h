@@ -32,20 +32,17 @@ public:
 
 	~CImage()
 	{
-		try
+		size_t count = 0;
+		while (std::filesystem::exists(m_path) && count < 3)
 		{
-			size_t count = 0;
-			while (count < 3)
+			try
 			{
-				if (std::filesystem::remove(m_path))
-				{
-					break;
-				}
-				count++;
+				std::filesystem::remove(m_path);
 			}
-		}
-		catch (const std::exception&)
-		{
+			catch (const std::exception&)
+			{
+			}
+			count++;
 		}
 	}
 
