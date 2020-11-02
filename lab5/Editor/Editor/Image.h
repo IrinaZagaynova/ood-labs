@@ -38,6 +38,7 @@ public:
 			try
 			{
 				std::filesystem::remove(m_path);
+				break;
 			}
 			catch (const std::exception&)
 			{
