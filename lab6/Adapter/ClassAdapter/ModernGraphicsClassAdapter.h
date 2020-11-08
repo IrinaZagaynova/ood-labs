@@ -16,9 +16,9 @@ namespace app
 
         void SetColor(uint32_t rgbColor)
         {
-            float r = float((rgbColor >> 16) & 0xff) / 255;
-            float g = float((rgbColor >> 8) & 0xff) / 255;
-            float b = float(rgbColor & 0xff) / 255;
+            float r = float((rgbColor >> 16) & 0xff) / 255.0f;
+            float g = float((rgbColor >> 8) & 0xff) / 255.0f;
+            float b = float(rgbColor & 0xff) / 255.0f;
             m_color = modern_graphics_lib::CRGBAColor(r, g, b, 1);
         }
         void MoveTo(int x, int y)
