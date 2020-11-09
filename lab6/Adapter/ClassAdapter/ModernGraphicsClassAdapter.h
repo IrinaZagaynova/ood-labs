@@ -4,7 +4,7 @@
 
 namespace app
 {
-    class CModernGraphicsClassAdapter : public graphics_lib::ICanvas, public modern_graphics_lib::CModernGraphicsRenderer
+    class CModernGraphicsClassAdapter : public graphics_lib::ICanvas, protected modern_graphics_lib::CModernGraphicsRenderer
     {
     public:
         CModernGraphicsClassAdapter(ostream& strm)
@@ -12,6 +12,7 @@ namespace app
             , m_point(0, 0)
             , m_color(0, 0, 0, 1)
         {
+            BeginDraw();
         }
 
         void SetColor(uint32_t rgbColor)
@@ -27,7 +28,7 @@ namespace app
         }
         void LineTo(int x, int y)
         {
-            CModernGraphicsRenderer::DrawLine(m_point, { x, y }, m_color);
+            DrawLine(m_point, { x, y }, m_color);
             MoveTo(x, y);
         }
 

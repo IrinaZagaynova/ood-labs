@@ -12,6 +12,7 @@ namespace app
             , m_point(0, 0)
             , m_color(0, 0, 0, 1)
         {
+            m_renderer.BeginDraw();
         }
 
         void SetColor(uint32_t rgbColor)
