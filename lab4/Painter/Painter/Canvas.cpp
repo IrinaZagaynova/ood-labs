@@ -29,13 +29,13 @@ void CCanvas::SetColor(Color color)
 
 void CCanvas::DrawLine(SPoint from, SPoint to)
 {
-	glLineWidth(2);
+    glLineWidth(2);
     glColor3d(m_color.red, m_color.green, m_color.blue);
 
-	glBegin(GL_LINES);
-	glVertex2d(from.x, from.y);
-	glVertex2d(to.x, to.y);
-	glEnd();
+    glBegin(GL_LINES);
+    glVertex2d(from.x, from.y);
+    glVertex2d(to.x, to.y);
+    glEnd();
 }
 
 void CCanvas::DrawEllipse(SPoint center, double horizontalRadius, double verticalRadius)
